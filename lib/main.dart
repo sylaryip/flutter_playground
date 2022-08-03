@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:playground/custom_paint_chaos.dart';
+import 'package:playground/my_dialog.dart';
+import 'package:playground/my_dialog_controller.dart';
 import 'package:playground/sketch_pad.dart';
 
+import 'five_page.dart';
 import 'skew_page.dart';
 
 void main() {
@@ -13,7 +17,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -53,6 +57,20 @@ class Home extends StatelessWidget {
               Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => const SkewPage(),
               ));
+            },
+          ),
+          ListTile(
+            title: const Text('GetDialog'),
+            onTap: () async {
+              // Get.put<MyDialogController>(MyDialogController());
+              Get.dialog(const MyDialog(), arguments: {'data': 'hahaha'});
+              // Get.delete<MyDialogController>();
+            },
+          ),
+          ListTile(
+            title: const Text('Five'),
+            onTap: () async {
+              Get.to(const FivePage());
             },
           ),
         ],
