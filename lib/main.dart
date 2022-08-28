@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:playground/custom_paint_chaos.dart';
 import 'package:playground/my_dialog.dart';
-import 'package:playground/my_dialog_controller.dart';
 import 'package:playground/sketch_pad.dart';
 
+import 'clock.dart';
 import 'five_page.dart';
+import 'mixin/test.dart';
 import 'skew_page.dart';
+import 'stream_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,6 +35,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Playground')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          var test = Test();
+          test.printState();
+        },
+      ),
       body: ListView(
         children: [
           ListTile(
@@ -70,7 +78,19 @@ class Home extends StatelessWidget {
           ListTile(
             title: const Text('Five'),
             onTap: () async {
-              Get.to(const FivePage());
+              Get.to(() => const FivePage());
+            },
+          ),
+          ListTile(
+            title: const Text('Clock'),
+            onTap: () async {
+              Get.to(() => const ClockPage());
+            },
+          ),
+          ListTile(
+            title: const Text('Stream'),
+            onTap: () async {
+              Get.to(() => const StreamPage());
             },
           ),
         ],
