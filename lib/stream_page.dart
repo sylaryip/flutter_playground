@@ -14,6 +14,7 @@ class _StreamPageState extends State<StreamPage> {
   late StreamSubscription<int> mySubscriptions;
 
   int myInt = 0;
+
   @override
   void initState() {
     super.initState();
@@ -58,6 +59,7 @@ class _StreamPageState extends State<StreamPage> {
                 TextButton(
                   onPressed: () {
                     mySubscriptions.cancel();
+                    print('test');
                   },
                   child: const Text('cancel'),
                 ),
@@ -78,6 +80,7 @@ class NumberCreator {
       _count++;
     });
   }
+
   int _count = 0;
 
   final _controller = StreamController<int>();
