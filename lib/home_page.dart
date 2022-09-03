@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import 'audio_page.dart';
 import 'clock.dart';
 import 'custom_paint_chaos.dart';
 import 'five_page.dart';
@@ -10,6 +11,7 @@ import 'my_dialog.dart';
 import 'sketch_pad.dart';
 import 'skew_page.dart';
 import 'stream_page.dart';
+import 'value_notifier_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -80,6 +82,18 @@ class Home extends StatelessWidget {
             title: const Text('List'),
             onTap: () async {
               Get.to(() => const ListPage());
+            },
+          ),
+          ListTile(
+            title: const Text('ValueNotifier'),
+            onTap: () async {
+              Get.to(() => const ValueNotifierPage());
+            },
+          ),
+          ListTile(
+            title: const Text('audio'),
+            onTap: () async {
+              Get.to(() => const AudioPage());
             },
           ),
         ],
