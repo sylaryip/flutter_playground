@@ -12,6 +12,7 @@ class _AudioPageState extends State<AudioPage> {
   @override
   void initState() {
     super.initState();
+    AudioPlayer().play(AssetSource('audio/notification.mp3'));
     AudioPlayer().setSourceAsset('audio/notification.mp3');
   }
 

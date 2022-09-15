@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'audio_page.dart';
+import 'autocomplete.dart';
 import 'clock.dart';
 import 'custom_paint_chaos.dart';
 import 'five_page.dart';
@@ -94,6 +95,12 @@ class Home extends StatelessWidget {
             title: const Text('audio'),
             onTap: () async {
               Get.to(() => const AudioPage());
+            },
+          ),
+          ListTile(
+            title: const Text('autocomplete'),
+            onTap: () async {
+              Get.to(() => const AutoCompletePage());
             },
           ),
         ],
