@@ -6,6 +6,7 @@ import 'autocomplete.dart';
 import 'clock.dart';
 import 'custom_paint_chaos.dart';
 import 'five_page.dart';
+import 'image_center_slice_page.dart';
 import 'list_page.dart';
 import 'mixin/test.dart';
 import 'my_dialog.dart';
@@ -101,6 +102,12 @@ class Home extends StatelessWidget {
             title: const Text('autocomplete'),
             onTap: () async {
               Get.to(() => const AutoCompletePage());
+            },
+          ),
+          ListTile(
+            title: const Text('image centerSlice'),
+            onTap: () async {
+              Get.to(() => const ImageCenterSlicePage());
             },
           ),
         ],
