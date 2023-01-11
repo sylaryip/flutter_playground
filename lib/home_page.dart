@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:playground/dio_page.dart';
+import 'package:playground/listview_position.dart';
+import 'package:playground/xie.dart';
 
 import 'audio_page.dart';
 import 'autocomplete.dart';
 import 'clock.dart';
 import 'custom_paint_chaos.dart';
+import 'expand_test.dart';
 import 'five_page.dart';
 import 'image_center_slice_page.dart';
 import 'list_page.dart';
 import 'mixin/test.dart';
 import 'my_dialog.dart';
+import 'processbar.dart';
+import 'render_child_page.dart';
 import 'sketch_pad.dart';
 import 'skew_page.dart';
 import 'stream_page.dart';
 import 'value_notifier_page.dart';
+import 'widgets/game_page.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -108,6 +115,42 @@ class Home extends StatelessWidget {
             title: const Text('image centerSlice'),
             onTap: () async {
               Get.to(() => const ImageCenterSlicePage());
+            },
+          ),
+          ListTile(
+            title: const Text('render child'),
+            onTap: () async {
+              Get.to(() => const RenderChildPage());
+            },
+          ),
+          ListTile(
+            title: const Text('expand test'),
+            onTap: () async {
+              Get.to(() => const ExpandTestPage());
+            },
+          ),
+          ListTile(
+            title: const Text('xie'),
+            onTap: () async {
+              Get.to(() => const GamePage());
+            },
+          ),
+          ListTile(
+            title: const Text('ProcessBarPage'),
+            onTap: () async {
+              Get.to(() => const ProcessBarPage());
+            },
+          ),
+          ListTile(
+            title: const Text('ListView position'),
+            onTap: () async {
+              Get.to(() => const ListViewPosition());
+            },
+          ),
+          ListTile(
+            title: const Text('dio'),
+            onTap: () async {
+              Get.to(() => const DioPage());
             },
           ),
         ],
