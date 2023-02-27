@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:playground/dio_page.dart';
+import 'package:playground/getx_test_page.dart';
+import 'package:playground/inkwell_page.dart';
 import 'package:playground/listview_position.dart';
+import 'package:playground/queue_page.dart';
 import 'package:playground/xie.dart';
 
 import 'audio_page.dart';
@@ -10,6 +13,7 @@ import 'clock.dart';
 import 'custom_paint_chaos.dart';
 import 'expand_test.dart';
 import 'five_page.dart';
+import 'getx_test_controller.dart';
 import 'image_center_slice_page.dart';
 import 'list_page.dart';
 import 'mixin/test.dart';
@@ -37,6 +41,14 @@ class Home extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListTile(
+            title: const Text('inkwell'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const InkWellPage(),
+              ));
+            },
+          ),
           ListTile(
             title: const Text('Sketch Pad'),
             onTap: () {
@@ -151,6 +163,27 @@ class Home extends StatelessWidget {
             title: const Text('dio'),
             onTap: () async {
               Get.to(() => const DioPage());
+            },
+          ),
+          ListTile(
+            title: const Text('queue'),
+            onTap: () async {
+              Get.to(() => const QueuePage());
+            },
+          ),
+          ListTile(
+            title: const Text('GetXBuilder'),
+            onTap: () async {
+              var tag = UniqueKey().toString();
+              var controller = GetXTestController();
+              controller.myValue = 10;
+              Get.to(
+                () => GetXTestPage(tag: tag),
+                binding: BindingsBuilder.put(
+                  () => controller,
+                  tag: tag,
+                ),
+              );
             },
           ),
         ],
