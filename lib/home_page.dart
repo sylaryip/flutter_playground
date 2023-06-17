@@ -5,7 +5,8 @@ import 'package:playground/getx_test_page.dart';
 import 'package:playground/inkwell_page.dart';
 import 'package:playground/listview_position.dart';
 import 'package:playground/queue_page.dart';
-import 'package:playground/xie.dart';
+import 'package:playground/tabview_page.dart';
+import 'package:playground/tap_region.dart';
 
 import 'audio_page.dart';
 import 'autocomplete.dart';
@@ -41,6 +42,22 @@ class Home extends StatelessWidget {
       ),
       body: ListView(
         children: [
+          ListTile(
+            title: const Text('tabViewPage'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const TabViewPage(),
+              ));
+            },
+          ),
+          ListTile(
+            title: const Text('TapRegionPage'),
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const TapRegionPage(),
+              ));
+            },
+          ),
           ListTile(
             title: const Text('inkwell'),
             onTap: () {
